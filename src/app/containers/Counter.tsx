@@ -8,8 +8,8 @@ export function Counter () {
   const { increment, decrement, incrementByAmount, incrementAsync } = actions;
   const { selectCount } = selectors;
 
-  const count = useSelector( selectCount );
   const dispatch = useDispatch();
+  const count = useSelector( selectCount );
   const [incrementAmount, setIncrementAmount] = useState( '2' );
   const cx = classnames( 'counter' );
 
