@@ -9,7 +9,7 @@ const initialState: CounterState = {
   value: 0,
 };
 
-export const slice = createSlice( {
+const slice = createSlice( {
   name: 'counter',
   initialState,
   reducers: {
@@ -25,13 +25,13 @@ export const slice = createSlice( {
   },
 } );
 
-export const incrementAsync = ( amount: number ): AppThunk => dispatch => {
+const incrementAsync = ( amount: number ): AppThunk => dispatch => {
   setTimeout( () => {
     dispatch( slice.actions.incrementByAmount( amount ) );
   }, 1000 );
 };
 
-export const selectCount = ( state: RootState ) => state.counter.value;
+const selectCount = ( state: RootState ) => state.counter.value;
 
 export const actions = {
   ...slice.actions,
