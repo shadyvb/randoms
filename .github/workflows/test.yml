@@ -1,0 +1,89 @@
+name: Test
+on: [push, pull_request]
+
+jobs:
+  build:
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+    # strategy:
+    #   matrix:
+    #     php: ['7.4']
+    #     wp: ['*']
+    #   fail-fast: true
+    # name: WP ${{ matrix.wp }} / PHP ${{ matrix.php }}
+    runs-on: ubuntu-18.04
+    # services:
+    #   mysql:
+    #     image: mysql:5.7
+    #     env:
+    #       MYSQL_DATABASE: wordpress
+    #       MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    #     ports:
+    #       - 3306
+    #     options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+
+    # - name: Install PHP
+    #   uses: shivammathur/setup-php@2.7.0
+    #   with:
+    #     php-version: ${{ matrix.php }}
+    #     extensions: mysqli, xmlwriter
+    #     coverage: none
+    #     tools: composer:v1
+
+    # - name: Debugging
+    #   run: |
+    #     php --version
+    #     php -m
+    #     composer --version
+    #     node -v
+    #     npm -v
+
+    # - name: Get Composer Cache Directory
+    #   id: composer-cache-dir
+    #   run: |
+    #     echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    # - name: Cache PHP Dependencies
+    #   id: composer-cache
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: ${{ steps.composer-cache-dir.outputs.dir }}
+    #     key: ${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+
+    # - name: Install PHP Dependencies
+    #   run: |
+    #     composer install --prefer-dist --no-progress --no-suggest --no-interaction
+    #     composer require --dev --prefer-dist --no-progress --no-suggest --no-interaction --update-with-dependencies roots/wordpress="${{ matrix.wp }} || *" wp-phpunit/wp-phpunit="${{ matrix.wp }} || *"
+
+    - name: Get npm cache directory
+      id: npm-cache-dir
+      run: |
+        echo "::set-output name=dir::$(npm config get cache)"
+        echo "::set-output name=npm-version::$(npm -v)"
+        echo "::set-output name=node-version::$(node-v)"
+
+    - name: Cache JS Dependencies
+      id: npm-cache
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.npm-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-${{ steps.npm-cache-dir.outputs.node-version }}-${{ steps.npm-cache-dir.outputs.npm-version }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install JS Dependencies
+      run: npm install
+
+    # - name: PHPCS cache
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: tests/cache
+    #     key: ${{ matrix.php }}-phpcs-${{ hashFiles('plugin.php') }}
+
+    - name: Run the tests
+      run: |
+        npm run lint
+        npm run build
+        # composer test
+      # env:
+      #   WP_TESTS_DB_HOST: 127.0.0.1:${{ job.services.mysql.ports['3306'] }}
