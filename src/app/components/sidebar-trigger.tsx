@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Sidebar = () => (
+const SidebarTrigger = () => (
   <div className='sidebar-trigger'>+</div>
 );
 
-export default Sidebar;
+export default SidebarTrigger;

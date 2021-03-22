@@ -2,13 +2,13 @@ import React from "react";
 import NavMenu from './nav-menu';
 import SocilLinks from './social-links';
 import FeedLink from './feed-link';
-import Sidebar from './sidebar';
+import SidebarTrigger from './sidebar-trigger';
 import Logo from './logo';
 
 const Header = () => {
   return (
     <header className='header'>
-      <Sidebar />
+      <SidebarTrigger />
       <Logo />
       <NavMenu />
       <FeedLink />
