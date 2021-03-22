@@ -1,11 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import classnames from "classnames-prefix";
-
-const cx = classnames('header');
 
 const FeedLink = () => (
-  <div className={cx('__feed-link')}>
+  <div className='feed-link'>
     <Link to='/feed'>
       <i>env</i>
       <span>newsletter</span>

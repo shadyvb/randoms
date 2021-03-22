@@ -10,7 +10,7 @@ const links = [
 ];
 
 const SocilLinks = () => (
-  <ul className='__social-links'>
+  <ul className='social-links-menu'>
     {links.map(link => (
       <li key={link.path}>
         <a
