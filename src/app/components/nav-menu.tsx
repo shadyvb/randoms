@@ -3,11 +3,11 @@ import {useRouteMatch, Link} from 'react-router-dom';
 import classnames from "classnames-prefix";
 
 const links = [
-  { title: 'News', path: '/news' },
-  { title: 'Exclosive', path: '/exclosive' },
-  { title: 'Movies', path: '/movies' },
-  { title: 'Tv', path: '/tv' },
-  { title: 'Gaming', path: '/gaming' },
+  {title: 'News', path: '/news'},
+  {title: 'Exclosive', path: '/exclosive'},
+  {title: 'Movies', path: '/movies'},
+  {title: 'Tv', path: '/tv'},
+  {title: 'Gaming', path: '/gaming'},
 ];
 
 const cx = classnames('header');
@@ -17,7 +17,7 @@ const NavLink = (props: any) => {
 
   return (
     <Link
-      style={{ color: match ? 'red' : '#000000' }}
+      style={{color: match ? 'red' : '#000000'}}
       {...props}
     />
   );
@@ -35,4 +35,4 @@ const NavMenu = () => {
   );
 }
 
-export {NavMenu};
+export default NavMenu;

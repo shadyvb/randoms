@@ -7,4 +7,4 @@ const Sidebar = () => (
   <div className={cx('__side-nav')}>+</div>
 );
 
-export {Sidebar};
+export default Sidebar;

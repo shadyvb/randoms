@@ -25,4 +25,4 @@ const SocilLinks = () => (
   </ul>
 );
 
-export {SocilLinks};
+export default SocilLinks;

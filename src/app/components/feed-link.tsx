@@ -1,15 +1,16 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import classnames from "classnames-prefix";
 
 const cx = classnames('header');
 
 const FeedLink = () => (
   <div className={cx('__feed-link')}>
-    <a href='/feed'>
+    <Link to='/feed'>
       <i>env</i>
       <span>newsletter</span>
-    </a>
+    </Link>
   </div>
 );
 
-export {FeedLink};
+export default FeedLink;
