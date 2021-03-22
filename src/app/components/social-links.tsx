@@ -9,7 +9,7 @@ const links = [
   {icon: 'F', path: '/feed'},
 ];
 
-const SocilLinks = () => (
+const SocialLinks = () => (
   <ul className='social-links-menu'>
     {links.map(link => (
       <li key={link.path}>
@@ -25,4 +25,4 @@ const SocilLinks = () => (
   </ul>
 );
 
-export default SocilLinks;
+export default SocialLinks;
