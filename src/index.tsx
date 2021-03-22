@@ -5,12 +5,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { store } from "./app/store";
 import * as serviceWorker from "./serviceWorker";
 import routes from "./app/routes";
+import Header from './app/components/header';
 import "./app/styles/index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+        <Header />
         <Switch>
           {routes.map((route) => (
             <Route
