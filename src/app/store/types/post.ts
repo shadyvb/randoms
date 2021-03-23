@@ -9,4 +9,6 @@ export type Post = {
     meta: {
         _thumbnail_id: number,
     }
+    category: number,
+    author: number,
 }
