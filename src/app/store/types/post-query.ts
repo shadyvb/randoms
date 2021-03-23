@@ -3,7 +3,7 @@ import { Post } from './post';
 export type PostQueryStatus = 'pending' | 'finished' | 'failed';
 
 export type PostQuery = {
-    status: string, //PostQueryStatus,
+    status: string,
     args: PostQueryArgs,
     result: {
         posts: Post[],

@@ -14,7 +14,7 @@ export const usePostQuery = ( args: PostQueryArgs ): PostQuery => {
             pages: 3,
         },
         actions: {
-            getNextPage: () => { },
+            getNextPage: () => null,
         }
     };
 
