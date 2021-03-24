@@ -1,4 +1,6 @@
 import { Post } from '../types/post';
+import {useCategory} from './useCategory';
+import {useUser} from './useUser';
 
 export const usePost = ( id: number ): Post => {
     const dummy = {
@@ -12,8 +14,8 @@ export const usePost = ( id: number ): Post => {
         meta: {
             _thumbnail_id: 2,
         },
-        category: 1,
-        author: 1,
+        categories: [useCategory(1)],
+        author: useUser(1),
     };
 
     return dummy;
