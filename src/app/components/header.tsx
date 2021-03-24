@@ -6,15 +6,15 @@ import SidebarTrigger from './sidebar-trigger';
 import Logo from './logo';
 
 const Header = () => {
-  return (
-    <header className='header'>
-      <SidebarTrigger />
-      <Logo />
-      <NavMenu />
-      <FeedLink />
-      <SocilLinks />
-    </header>
-  );
+    return (
+        <header className='header'>
+            <SidebarTrigger />
+            <Logo />
+            <NavMenu />
+            <FeedLink />
+            <SocilLinks />
+        </header>
+    );
 }
 
 export default Header;
