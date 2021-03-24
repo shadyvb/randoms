@@ -1,5 +1,6 @@
-import {Category} from './category';
-import {User} from './user';
+import { Category } from './category';
+import { User } from './user';
+import { Attachment } from './attachment';
 
 export type Post = {
     id: number,
@@ -10,7 +11,7 @@ export type Post = {
         rendered: string,
     },
     meta: {
-        _thumbnail_id: number,
+        _thumbnail: Attachment,
     }
     categories: Category[],
     author: User,

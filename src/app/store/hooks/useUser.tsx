@@ -1,6 +1,6 @@
 import { User } from '../types/user';
 
-export const useUser = (id: number): User => {
+export const useUser = ( id: number ): User => {
   const dummy = {
     id: 1,
     name: 'Sharaf',
