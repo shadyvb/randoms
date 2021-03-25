@@ -11,6 +11,7 @@ const Article = (props: any) => {
             <div>
                 <Link to={`/${article.id}`}>
                     <img
+                        loading='lazy'
                         alt={thumbnail.alt_text || thumbnail.caption.rendered}
                         src={thumbnail.source_url}
                     />
