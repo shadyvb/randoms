@@ -13,7 +13,7 @@ export const usePost = ( id: number ): Post => {
             rendered: 'Test content',
         },
         meta: {
-            _thumbnail: useAttachment( 2 ),
+            _thumbnail_id: useAttachment( 2 ),
         },
         categories: [ useCategory( 1 ) ],
         author: useUser( 1 ),
