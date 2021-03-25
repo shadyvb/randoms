@@ -11,7 +11,7 @@ export type Post = {
         rendered: string,
     },
     meta: {
-        _thumbnail: Attachment,
+        _thumbnail_id: Attachment,
     }
     categories: Category[],
     author: User,
