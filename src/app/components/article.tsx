@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePost } from '../store/hooks/usePost';
 import Thumbnail from './thumbnail';
+import Category from './category';
+import Author from './author';
 
 const Article = (props: any) => {
     const article = usePost(props.postId);
@@ -10,18 +12,16 @@ const Article = (props: any) => {
         <article>
             <div>
                 <Link to={`/${article.id}`}>
-                    <Thumbnail id={article.meta._thumbnail} />
+                    <Thumbnail id={article.meta._thumbnail_id} />
                 </Link>
                 <div>
                     <span>
-                        {article.categories.map(({ name, slug }) => (
-                            <Link key={slug} to={`/category/${slug}`}>
-                                {name}
-                            </Link>
+                        {article.categories.map(id => (
+                            <Category key={id} id={id} />
                         ))}
                     </span>
                     <span>/</span>
-                    <span>{article.author.name}</span>
+                    <Author id={article.author} />
                 </div>
             </div>
             <div>
