@@ -1,20 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePost } from '../store/hooks/usePost';
+import Thumbnail from './thumbnail';
 
 const Article = (props: any) => {
     const article = usePost(props.postId);
-    const thumbnail = article.meta._thumbnail;
 
     return (
         <article>
             <div>
                 <Link to={`/${article.id}`}>
-                    <img
-                        loading='lazy'
-                        alt={thumbnail.alt_text || thumbnail.caption.rendered}
-                        src={thumbnail.source_url}
-                    />
+                    <Thumbnail id={article.meta._thumbnail} />
                 </Link>
                 <div>
                     <span>
