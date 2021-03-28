@@ -5,7 +5,7 @@ export const Home = () => {
     return (
         <main>
             <h1>3shwa2yat - Home</h1>
-            <ArticlesGrid articles={Array(12).fill(1)} />
+            <ArticlesGrid />
         </main>
     );
 };
