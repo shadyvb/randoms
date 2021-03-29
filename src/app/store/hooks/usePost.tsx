@@ -3,6 +3,7 @@ import { Post } from '../types/post';
 export const usePost = ( id: number ): Post => {
     const dummy = {
         id: 1,
+        slug: 'slug-1',
         title: {
             rendered: 'Test title',
         },
