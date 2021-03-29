@@ -1,8 +1,8 @@
 import React from 'react';
 import { useUser } from '../store/hooks/useUser';
 
-const Author = ( props: any ) => {
-    const { name } = useUser( props.id );
+const Author = ({ id }: { id: number }) => {
+    const { name } = useUser( id );
 
     return (
         <span>{name}</span>

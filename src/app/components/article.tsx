@@ -5,19 +5,19 @@ import Thumbnail from './thumbnail';
 import Category from './category';
 import Author from './author';
 
-const Article = (props: any) => {
-    const article = usePost(props.postId);
+const Article = ({ id }: { id: number }) => {
+    const article = usePost( id );
 
     return (
         <article>
             <div>
-                <Link to={`/${article.id}`}>
+                <Link to={`/articles/${article.slug}`}>
                     <Thumbnail id={article.meta._thumbnail_id} />
                 </Link>
                 <div>
                     <span>
-                        {article.categories.map(id => (
-                            <Category key={id} id={id} />
+                        {article.categories.map(categoryId => (
+                            <Category key={categoryId} id={categoryId} />
                         ))}
                     </span>
                     <span>/</span>

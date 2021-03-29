@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCategory } from '../store/hooks/useCategory';
 
-const Category = ( props: any ) => {
-    const { name, slug } = useCategory( props.id );
+const Category = ({ id }: { id: number }) => {
+    const { name, slug } = useCategory( id );
 
     return (
         <Link key={slug} to={`/category/${slug}`}>

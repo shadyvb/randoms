@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAttachment } from '../store/hooks/useAttachment';
 
-const Thumbnail = ( props: any ) => {
-    const thumb = useAttachment( props.id );
+const Thumbnail = ({ id }: { id: number }) => {
+    const thumb = useAttachment( id );
 
     return (
         <img
