@@ -10,9 +10,11 @@ export const usePost = ( id: number ): Post => {
             rendered: 'Test content',
         },
         meta: {
-            _thumbnail_id: 2,
-        }
-    }
+            _thumbnail_id: 1,
+        },
+        categories: [1],
+        author: 1,
+    };
 
     return dummy;
 }

@@ -8,5 +8,7 @@ export type Post = {
     },
     meta: {
         _thumbnail_id: number,
-    }
+    },
+    categories: number[],
+    author: number,
 }
