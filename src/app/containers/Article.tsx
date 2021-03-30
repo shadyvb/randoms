@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router';
 import Author from '../components/author';
 import Thumbnail from '../components/thumbnail';
+import RelatedPosts from '../components/related-posts';
 import { usePostBySlug } from '../store/hooks/usePostBySlug';
 import classnames from 'classnames-prefix';
 
@@ -26,6 +27,9 @@ export default function Article() {
                     {content.rendered}
                 </div>
             </article>
+            <div className={cx('__related-posts')}>
+                <RelatedPosts slug={slug} />
+            </div>
         </main>
     );
 }
