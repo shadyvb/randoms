@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from './article';
 
-export default function RelatedPosts() {
+export default function RelatedPosts({ slug }: { slug: string }) {
     const relatedposts = [ 3, 4, 5 ];
 
     return (
