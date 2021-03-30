@@ -1,5 +1,6 @@
-import home from "./home";
-import catchall from "./catchall";
+import home from './home';
+import article from './article'
+import catchall from './catchall';
 
 type route = {
     component: any;
@@ -9,6 +10,6 @@ type route = {
     };
 };
 
-const routes: route[] = [home, catchall];
+const routes: route[] = [home, article, catchall];
 
 export default routes;
