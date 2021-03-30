@@ -6,7 +6,7 @@ export default function RelatedPosts() {
 
     return (
         <div>
-            <h4>Related Articles</h4>
+            <span>Related Articles</span>
             <ul>
                 {relatedposts.map((id: number ) => (
                     <li key={id}>
