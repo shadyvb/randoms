@@ -1,12 +1,8 @@
 import React from 'react';
 
 const links = [
-    { icon: 'F', path: 'https://facebook.com' },
-    { icon: 'T', path: 'https://twitter.com' },
-    { icon: 'Y', path: 'https://youtube.com' },
-    { icon: 'I', path: 'https://instagram.com' },
-    { icon: 'F', path: 'https://flipboard.com' },
-    { icon: 'F', path: '/feed' },
+    { icon: 'فيسبوك', path: 'https://facebook.com' },
+    { icon: 'يوتيوب', path: 'https://youtube.com' },
 ];
 
 const SocialLinks = () => (

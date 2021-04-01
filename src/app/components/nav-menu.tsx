@@ -2,11 +2,10 @@ import React from 'react';
 import NavLink from './nav-link';
 
 const links = [
-    { title: 'News', path: '/news' },
-    { title: 'Exclosive', path: '/exclosive' },
-    { title: 'Movies', path: '/movies' },
-    { title: 'Tv', path: '/tv' },
-    { title: 'Gaming', path: '/gaming' },
+    { title: 'عامة', path: '/category/miscellaneous' },
+    { title: 'علوم وفلك', path: '/category/science-and-astronomy' },
+    { title: 'برية وطبيعة', path: '/category/wild-and-nature' },
+    { title: 'عجائب وغرائب', path: '/category/bizzare-and-weird' },
 ];
 
 const NavMenu = () => {
