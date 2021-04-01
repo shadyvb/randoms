@@ -1,5 +1,14 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background-color: var(--bg-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,47 +16,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  list-style: none;
 }
 
-.App {
-  text-align: center;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.header {
+  background-color: #000000;
+  height: 60px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
+  &__container {
+    display: flex;
+    align-items: center;
   }
-}
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
+  .nav-menu, .social-links-menu {
+    font-family: Cocon;
 
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+    li a {
+      text-decoration: none;
+    }
   }
-  50% {
-    transform: translateY(10px)
+
+  .nav-menu {
+    li a {
+      color: #ffffff;
+
+      &.active {
+        color: #3ab6f6;
+      }
+
+      &:hover {
+        color: #3ab6f6;
+      }
+    }
   }
-  100% {
-    transform: translateY(0px)
+
+  .social-links-menu {
+    li a {
+      color: #eeeeee;
+    }
   }
 }
