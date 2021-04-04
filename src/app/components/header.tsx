@@ -7,10 +7,12 @@ import Logo from './logo';
 const Header = () => {
     return (
         <header className='header'>
-            <SidebarTrigger />
-            <Logo />
-            <NavMenu />
-            <SocilLinks />
+            <div className='header__container container'>
+                <SidebarTrigger />
+                <Logo />
+                <NavMenu />
+                <SocilLinks />
+            </div>
         </header>
     );
 }
