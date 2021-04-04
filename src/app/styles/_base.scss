@@ -88,3 +88,71 @@ ul {
     }
   }
 }
+
+// Articles
+.archive-hero {
+  display: flex;
+  max-height: 500px;
+
+  &--primary {
+    flex-basis: 66.66%;
+
+    .hero-article {
+      height: 100%;
+      font-size: 2em;
+    }
+  }
+
+  &--secondary {
+    flex-basis: 33.33%;
+
+    .hero-article {
+      height: 50%;
+      font-size: 1.5em;
+    }
+  }
+
+  .hero-article {
+    display: block;
+    width: 100%;
+    font-family: Cocon;
+  
+    &__thumb {
+      position: relative;
+      height: 100%;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        transition-duration: .2s;
+
+        &:hover {
+          filter: brightness(90%);
+        }
+      }
+    }
+  
+    &__title {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding-top: .5rem;
+      padding-bottom: 2rem;
+      padding-inline-start: 1rem;
+      color: #fff;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+  
+      &::before {
+        content: '';
+        position: absolute;
+        width: 6.5%;
+        height: 3px;
+        min-width: 45px;
+        top: 0;
+        right: 1rem;
+        background-color: #3ab6f6;
+      }
+    }
+  }
+}
+
