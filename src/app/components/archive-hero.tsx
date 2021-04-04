@@ -6,7 +6,7 @@ const cx = classnames( 'archive-hero' );
 
 export default function ArchiveHero() {
     return (
-        <div className={cx('')}>
+        <div className={cx('archive-hero')}>
             <div className={cx('--primary')}>
                 <ArticleHero id={1} />
             </div>
