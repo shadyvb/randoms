@@ -2,10 +2,9 @@ import React from 'react';
 import ArchiveHero from '../components/archive-hero';
 import ArticlesGrid from '../components/articles-grid';
 
-export const Home = () => {
+export function Home() {
     return (
         <main>
-            <h1>عشوائيات</h1>
             <ArchiveHero />
             <ArticlesGrid />
         </main>
