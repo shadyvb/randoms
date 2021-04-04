@@ -5,7 +5,7 @@ export const usePost = ( id: number ): Post => {
         id: 1,
         slug: 'slug-1',
         title: {
-            rendered: 'Test title',
+            rendered: 'حقائق مذهلة عن جسم الانسان',
         },
         content: {
             rendered: 'Test content',
