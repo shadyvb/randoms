@@ -20,10 +20,17 @@ const ArticlesGrid = () => {
         );
     } else {
         return (
-            <div>
-                {postQuery.result.posts.map((post: Post, i: number) => (
-                    <Article key={i} id={post.id} />
-                ))}
+            <div className='articles-grid'>
+                <div className='container'>
+                    <div className='divider'>
+                        <span>احدث المقالات</span>
+                    </div>
+                    <div className='posts'>
+                        {postQuery.result.posts.map((post: Post, i: number) => (
+                            <Article key={i} id={post.id} />
+                        ))}
+                    </div>
+                </div>
             </div>
         );
     }
