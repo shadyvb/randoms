@@ -5,7 +5,7 @@ const Author = ({ id }: { id: number }) => {
     const { name } = useUser( id );
 
     return (
-        <span>{name}</span>
+        <span className='author'>{name}</span>
     );
 }
 
