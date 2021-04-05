@@ -3,7 +3,7 @@ import { User } from '../types/user';
 export const useUser = (id: number): User => {
     const dummy = {
         id: 1,
-        name: 'Sharaf',
+        name: 'محمد شرف',
         avatar: 'https://picsum.photos/200/300',
     };
 

@@ -3,7 +3,7 @@ import { usePost } from './usePost';
 
 export const usePostQuery = ( args: PostQueryArgs ): PostQuery => {
     const dummy = {
-        status: 'pending',
+        status: 'finished',
         args: {
             page: 1,
             per_page: args.per_page,
