@@ -1,8 +1,12 @@
 import React from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
 
-const NavLink = (props: any) => {
-    const match = useRouteMatch(props.to);
+interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
+    to: string,
+};
+
+const NavLink = ( props: Props ) => {
+    const match = useRouteMatch( props.to );
 
     return (
         <Link
