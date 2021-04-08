@@ -35,20 +35,54 @@ main {
   padding-top: 60px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .header {
   background-color: #000000;
-  height: 60px;
-  position: fixed;
+  height: auto;
   width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
+  padding: 10px 0;
   z-index: 1000;
+
+  @media (min-width: 926px) {
+    height: 60px;
+    padding: 0;
+  }
 
   &__container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     height: 100%;
     padding: 0 15px;
+
+    @media (min-width: 926px) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    @media (max-width: 927px) {
+      .header__item:not(:first-child) {
+        display: none;
+      }
+    }
   }
 
   .site-logo {
@@ -63,17 +97,29 @@ main {
 
   .nav-menu, .social-links-menu {
     display: flex;
-    margin-inline-start: 1rem;
-    font-size: 1.2em;
+    flex-direction: column;
+    margin-inline-start: 0px;
+    font-size: 3vw;
+
+    @media (min-width: 926px) {
+      flex-direction: row;
+      margin-inline-start: 1rem;
+      font-size: 1.2rem;
+    }
 
     li {
-      &+ li  {
-        margin-inline-start: 1rem;
-    }
-      a {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        text-decoration: none;
+      margin-block-start: 10px;
+
+      @media (min-width: 926px) {
+        &+ li  {
+          margin-inline-start: 1rem;
+          margin-block-start: 10px;
+        }
+        a {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -93,10 +139,117 @@ main {
   }
 
   .social-links-menu {
-    margin-inline-start: auto;
+    @media (min-width: 926px) {
+      margin-inline-start: auto;
+    }
 
     li a {
       color: #eeeeee;
+    }
+  }
+
+  // nav menu trigger
+  .nav-menu-trigger {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    display: block;
+    width: 30px;
+    height: 40px;
+    margin-top: 18px;
+    border-radius: 5px;
+
+    @media (min-width: 926px) {
+      display: none;
+    }
+
+    label {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    span {
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      display: block;
+      border-radius: 10px;
+      opacity: 1;
+      background-color: #ffffff;
+      transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+      &:first-child,
+      &:nth-child(2) {
+        top: 7px;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        top: 15px;
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        top: 23px;
+      }
+
+      &:nth-child(odd) {
+        left: 0;
+      }
+
+      &:nth-child(2n) {
+        left: 48%;
+      }
+    }
+  }
+
+  #nav-trigger:checked ~ * {
+    .header__item {
+      display: block;
+    }
+
+    label {
+      font-size: 2rem;
+    }
+
+    span {
+      &:first-child,
+      &:nth-child(6) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2),
+      &:nth-child(5) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+      }
+
+      &:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(6) {
+        left: 30%;
+      }
+
+      &:first-child,
+      &:nth-child(2) {
+        top: 10px;
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        top: 19px;
+      }
     }
   }
 }
@@ -131,6 +284,10 @@ main {
           text-align: start;
         }
       }
+
+      @media (min-width: 1400px) {
+        font-size: 40px;
+      }
     }
   }
 
@@ -148,6 +305,10 @@ main {
 
       @media (min-width: 926px) {
         font-size: 1.8vw;
+      }
+
+      @media (min-width: 1400px) {
+        font-size: 26px;
       }
     }
   }
@@ -277,6 +438,10 @@ main {
             font-size: .8vw;
           }
 
+          @media (min-width: 1400px) {
+            font-size: 20px;
+          }
+
           &::after {
             content: "";
             position: absolute;
@@ -291,6 +456,10 @@ main {
             margin-right: 8px;
             font-size: .8vw;
             color: #7c8d96;
+
+            @media (min-width: 1400px) {
+              font-size: 20px;
+            }
           }
 
           .author {
@@ -306,13 +475,17 @@ main {
           line-height: 1.3em;
           margin-top: 13px;
           margin-bottom: 30px;
+
+          @media (min-width: 768px) {
+            font-size: 2.4vw;
+          }
           
           @media (min-width: 926px) {
             font-size: 1.75vw;
           }
-
-          @media (min-width: 768px) {
-            font-size: 2.4vw;
+          
+          @media (min-width: 1400px) {
+            font-size: 25px;
           }
 
           a {
