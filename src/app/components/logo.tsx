@@ -7,7 +7,7 @@ export default function Logo () {
     const Element = isExact && path === '/' ? 'h1' : React.Fragment;
 
     return (
-        <Link className='site-logo' to='/'>
+        <Link className='header__item site-logo' to='/'>
             <Element>
                 <img
                     title='الموقع الرسمي لمجموعة قنوات عشوائيات'

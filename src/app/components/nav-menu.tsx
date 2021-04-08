@@ -10,7 +10,7 @@ const links = [
 
 const NavMenu = () => {
     return (
-        <ul className='nav-menu'>
+        <ul className='header__item nav-menu'>
             {links.map((link: { title: string, path: string }) => (
                 <li key={link.title}>
                     <NavLink to={link.path}>{link.title}</NavLink>

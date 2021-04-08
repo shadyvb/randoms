@@ -6,7 +6,7 @@ const links = [
 ];
 
 const SocialLinks = () => (
-    <ul className='social-links-menu'>
+    <ul className='header__item social-links-menu'>
         {links.map(link => (
             <li key={link.path}>
                 <a
