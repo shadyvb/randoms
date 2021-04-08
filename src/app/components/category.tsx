@@ -6,7 +6,7 @@ const Category = ({ id }: { id: number }) => {
     const { name, slug } = useCategory( id );
 
     return (
-        <Link key={slug} to={`/category/${slug}`}>
+        <Link to={`/category/${slug}`}>
             {name}
         </Link>
     );
