@@ -1,15 +1,22 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
+import logo from '../assets/images/logo.jpg';
 
-const Logo = () => (
-    <Link className='site-logo' to='/'>
-        <img
-            src='https://via.placeholder.com/150x40'
-            alt='3shwa2yat site logo'
-            height='40'
-            width='150'
-        />
-    </Link>
-);
+export default function Logo () {
+    const { isExact, path } = useRouteMatch();
+    const Element = isExact && path === '/' ? 'h1' : React.Fragment;
 
-export default Logo;
+    return (
+        <Link className='header__item site-logo' to='/'>
+            <Element>
+                <img
+                    title='الموقع الرسمي لمجموعة قنوات عشوائيات'
+                    src={logo}
+                    alt='عشوائيات'
+                    height='46'
+                    width='46'
+                />
+            </Element>
+        </Link>
+    );
+}

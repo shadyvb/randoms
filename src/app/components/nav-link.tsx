@@ -5,15 +5,13 @@ interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
     to: string,
 };
 
-const NavLink = ( props: Props ) => {
+export default function NavLink( props: Props ) {
     const match = useRouteMatch( props.to );
 
     return (
         <Link
-            style={{ color: match ? 'red' : '#000000' }}
+            className={match ? 'active' : ''}
             {...props}
         />
     );
 }
-
-export default NavLink;

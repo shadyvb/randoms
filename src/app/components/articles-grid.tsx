@@ -2,6 +2,7 @@ import React from 'react';
 import { usePostQuery } from '../store/hooks/usePostQuery';
 import { Post } from '../store/types/post';
 import Article from './article';
+import Divider from './divider'
 
 const ArticlesGrid = () => {
     const postQuery = usePostQuery({ page: 1, per_page: 10 });
@@ -20,10 +21,15 @@ const ArticlesGrid = () => {
         );
     } else {
         return (
-            <div>
-                {postQuery.result.posts.map((post: Post, i: number) => (
-                    <Article key={i} id={post.id} />
-                ))}
+            <div className='articles-grid'>
+                <div className='container'>
+                    <Divider>احدث المقالات</Divider>
+                    <div className='posts'>
+                        {postQuery.result.posts.map((post: Post, i: number) => (
+                            <Article key={i} id={post.id} />
+                        ))}
+                    </div>
+                </div>
             </div>
         );
     }
