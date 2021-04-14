@@ -10,7 +10,7 @@ const cx = classnames( 'article' );
 
 export default function Article() {
     const { slug }: { slug: string } = useParams();
-    const { title, author, content, meta } = usePostBySlug( slug );
+    const { id, title, author, content, meta } = usePostBySlug( slug );
 
     return (
         <main>
@@ -28,7 +28,7 @@ export default function Article() {
                 </div>
             </article>
             <div className={cx('__related-posts')}>
-                <RelatedPosts slug={slug} />
+                <RelatedPosts id={id} />
             </div>
         </main>
     );

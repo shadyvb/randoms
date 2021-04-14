@@ -2,8 +2,10 @@ import { PostQuery, PostQueryArgs } from '../types/post-query';
 import { usePost } from './usePost';
 
 export const usePostQuery = ( args: PostQueryArgs ): PostQuery => {
+    let status = 'finished';
+
     const dummy = {
-        status: 'finished',
+        status,
         args: {
             page: 1,
             per_page: args.per_page,
@@ -15,7 +17,11 @@ export const usePostQuery = ( args: PostQueryArgs ): PostQuery => {
         },
         actions: {
             getNextPage: () => null,
-        }
+        },
+
+        isPending: status === 'isPending',
+        isFailed: status === 'isFailed',
+        isFinished: status === 'finished',
     };
 
     return dummy;

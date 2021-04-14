@@ -12,7 +12,10 @@ export type PostQuery = {
     },
     actions: {
         getNextPage: () => void,
-    }
+    },
+    isPending: boolean,
+    isFailed: boolean,
+    isFinished: boolean,
 }
 
 export type PostQueryArgs = {
